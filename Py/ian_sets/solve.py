@@ -4,7 +4,7 @@ import re
 def ProcessSet(l):
     """Turn a line [read from text file] into a tuple of (label, values)."""
     label = l[l.find(':')-1]
-    vals = re.compile('{(.+)}').findall(l.rstrip())[0].split(',')
+    vals = re.findall('{(.+)}', l.rstrip())[0].split(',')
     return label, vals
 
 def GetSubsets(s):
